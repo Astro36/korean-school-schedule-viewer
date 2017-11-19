@@ -1,4 +1,4 @@
-window.Hammer = require('./node_modules/materialize-css/js/hammer.min.js');
+window.Hammer = require('./node_modules/materialize-css/js/hammer.min.js')
 require('materialize-css')
 
 const school = require('korean-school')
@@ -22,12 +22,12 @@ const updateScheduleViewer = async (which) => {
             let buf = '<tr>'
             for (let j = 1; j < 6; j += 1) {
               const value = schedules[j][i]
-              buf += `<td class="${value && value.isChanged ? 'blue-text' : ''}${value ? ' tooltipped" data-tooltip="'+value.subjectOriginal : ''}">${value ? `${value.subject} (${value.teacher})` : '없음'}</td>`
+              buf += `<td class="${value && value.isChanged ? 'blue-text' : ''}${value ? ' tooltipped" data-tooltip="' + value.subjectOriginal : ''}">${value ? `${value.subject} (${value.teacher})` : '없음'}</td>`
             }
             buf += '</tr>'
             $viewer.append(buf)
           }
-          $('.tooltipped').tooltip({delay: 50});
+          $('.tooltipped').tooltip({delay: 50})
           Materialize.toast('시간표가 업데이트 되었습니다.', 3000)
         } else {
           Materialize.toast('시간표를 불러올 수 없습니다. 인터넷 상태를 확인해주세요.', 3000)
@@ -59,7 +59,7 @@ const updateSchoolData = async (name) => {
     for (let i = 1; i <= Number(comciganData.학급수[3]); i += 1) {
       $studentSelector.append('<option value="3|' + i + '">3학년 ' + i + '반</option>')
     }
-    $('select#student').material_select();
+    $('select#student').material_select()
   } else {
     Materialize.toast('컴시간 알리미를 사용하지 않는 학교입니다.', 3000)
   }
@@ -74,16 +74,16 @@ $(document).ready(() => {
     onAutocomplete (text) {
       updateSchoolData(text)
     }
-  });
-  $('select#student').material_select();
+  })
+  $('select#student').material_select()
   $('.tabs').tabs({
     onShow (element) {
       const id = $(element).attr('id')
       showingTab = id
       updateScheduleViewer(id)
     }
-  });
-  $('.tooltipped').tooltip({delay: 50});
+  })
+  $('.tooltipped').tooltip({delay: 50})
   $('#update').click((element) => {
     updateScheduleViewer(showingTab)
   })
