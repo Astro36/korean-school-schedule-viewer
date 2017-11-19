@@ -26,6 +26,10 @@
                 <article>
                   <div class="card">
                     <div class="card-content">
+                      <div class="input-field">
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">학교명</label>
+                      </div>
                       <p>I am a very simple card. I am good at containing small bits of information.
                       I am convenient because I require little markup to use effectively.</p>
                     </div>
@@ -45,6 +49,15 @@
                       </div>
                       <div id="for-student">
                         <span class="card-title">학생용 시간표</span>
+                        
+                        <div class="input-field">
+                            <select id="student">
+                              <option value="" disabled selected>1학년</option>
+                              <option value="" disabled>2학년</option>
+                              <option value="" disabled>3학년</option>
+                            </select>
+                            <label>학년/반</label>
+                          </div>
                       </div>
                       <table class="centered">
                         <thead>
@@ -58,7 +71,9 @@
                         </thead>
                         <tbody id="weekly-schedule-viewer"></tbody>
                       </table>
-                      <a class="waves-effect waves-light btn" id="update">Update</a>
+                    </div>
+                    <div class="card-action">
+                      <a class="waves-effect waves-light blue-text" id="update">Update</a>
                     </div>
                   </div>
                 </article>
@@ -68,7 +83,6 @@
         </div>
       </section>
     </main>
-    <script src="./node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="./renderer.js"></script>
   </body>
 </html>
