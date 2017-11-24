@@ -30,7 +30,7 @@
   "homepage": "https://github.com/Astro36/KoreanSchool-ScheduleViewer#readme",
   "dependencies": {
     "jquery": "^3.2.1",
-    "korean-school": "^0.6.0",
+    "korean-school": "^0.6.1",
     "materialize-css": "^0.100.2"
   },
   "devDependencies": {

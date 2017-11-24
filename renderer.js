@@ -44,6 +44,7 @@ const updateScheduleViewer = async (which) => {
 const updateSchoolData = async (name) => {
   schoolName = name
   const $studentSelector = $('select#student')
+  const $teacherSelector = $('select#teacher')
   const comciganData = await school.getComciganData(school.find('', schoolName))
   if (comciganData) {
     $studentSelector.empty()
@@ -59,7 +60,9 @@ const updateSchoolData = async (name) => {
     for (let i = 1; i <= Number(comciganData.학급수[3]); i += 1) {
       $studentSelector.append('<option value="3|' + i + '">3학년 ' + i + '반</option>')
     }
-    $('select#student').material_select()
+    $studentSelector.material_select()
+    $teacherSelector.empty()
+    $teacherSelector.material_select()
   } else {
     Materialize.toast('컴시간 알리미를 사용하지 않는 학교입니다.', 3000)
   }
@@ -67,8 +70,8 @@ const updateSchoolData = async (name) => {
 
 $(document).ready(() => {
   const autoCompleteData = {}
-  school.getAll().forEach((value) => { autoCompleteData[value.name] = null })
-  $('input.autocomplete').autocomplete({
+  school.getAll().filter((value) => value.name.search('초등학교') < 0).forEach((value) => { autoCompleteData[value.name] = null })
+  $('input.autocomplete#autocomplete-input-school').autocomplete({
     data: autoCompleteData,
     limit: 10,
     onAutocomplete (text) {
@@ -76,6 +79,7 @@ $(document).ready(() => {
     }
   })
   $('select#student').material_select()
+  $('select#teacher').material_select()
   $('.tabs').tabs({
     onShow (element) {
       const id = $(element).attr('id')

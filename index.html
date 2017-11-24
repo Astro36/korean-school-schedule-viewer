@@ -27,11 +27,10 @@
                   <div class="card">
                     <div class="card-content">
                       <div class="input-field">
-                        <input type="text" id="autocomplete-input" class="autocomplete">
-                        <label for="autocomplete-input">학교명</label>
+                        <input type="text" id="autocomplete-input-school" class="autocomplete">
+                        <label for="autocomplete-input-school">학교명</label>
                       </div>
-                      <p>I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
+                      <p>초등학교는 컴시간 알리미를 사용하지 않습니다.</p>
                     </div>
                   </div>
                 </article>
@@ -46,18 +45,21 @@
                     <div class="card-content">
                       <div id="for-teacher">
                         <span class="card-title">교사용 시간표</span>
+                        <div class="input-field">
+                          <select id="teacher"></select>
+                          <label>교사</label>
+                        </div>
                       </div>
                       <div id="for-student">
                         <span class="card-title">학생용 시간표</span>
-                        
                         <div class="input-field">
-                            <select id="student">
-                              <option value="" disabled selected>1학년</option>
-                              <option value="" disabled>2학년</option>
-                              <option value="" disabled>3학년</option>
-                            </select>
-                            <label>학년/반</label>
-                          </div>
+                          <select id="student">
+                            <option value="" disabled selected>1학년</option>
+                            <option value="" disabled>2학년</option>
+                            <option value="" disabled>3학년</option>
+                          </select>
+                          <label>학년/반</label>
+                        </div>
                       </div>
                       <table class="centered">
                         <thead>
