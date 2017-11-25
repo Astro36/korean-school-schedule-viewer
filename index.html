@@ -6,6 +6,35 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css">    
     <title>Hello World!</title>
+    <style>
+      .dropdown-content li>a,
+      .dropdown-content li>span {
+        color: #212121;
+      }
+      .input-field input[type=text]:focus + label {
+        color: #2196f3 !important;
+      }
+      /* label underline focus color */
+      .input-field input[type=text]:focus {
+        border-bottom: 1px solid #2196f3 !important;
+        box-shadow: 0 1px 0 0 #2196f3 !important;
+      }
+      .select-dropdown li.disabled,
+      .select-dropdown li.disabled>span,
+      .select-dropdown li.optgroup {
+        color: rgba(0,0,0,0.3);
+      }
+      .tabs .tab a {
+        color: #90caf9;
+      }
+      .tabs .tab a:hover,
+      .tabs .tab a.active {
+        color: #2196f3;
+      }
+      .tabs .indicator {
+        background-color: #2196f3;
+      }
+    </style>
   </head>
   <body class="grey lighten-5">
     <header>
@@ -46,7 +75,9 @@
                       <div id="for-teacher">
                         <span class="card-title">교사용 시간표</span>
                         <div class="input-field">
-                          <select id="teacher"></select>
+                          <select id="teacher">
+                            <option value="" disabled selected>교사명</option>
+                          </select>
                           <label>교사</label>
                         </div>
                       </div>
