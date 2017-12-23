@@ -19,7 +19,7 @@ const updateScheduleViewer = async (which) => {
             let buf = '<tr>'
             for (let j = 1; j < 6; j += 1) {
               const value = schedules[j][i]
-              buf += `<td class="${value && value.isChanged ? 'blue-text' : ''}${value ? ' tooltipped" data-tooltip="' + value.subjectOriginal : ''}">${value ? `${value.subject}<br>(${value.grade}학년 ${value.room}반)` : '없음'}</td>`
+              buf += `<td class="${value && value.isChanged ? 'blue-text' : ''}${value ? ' tooltipped" data-tooltip="' + value.subjectOriginal : ''}">${value ? `${value.subject}<br>(${value.grade}-${value.room})` : '없음'}</td>`
             }
             buf += '</tr>'
             $viewer.append(buf)
@@ -42,7 +42,7 @@ const updateScheduleViewer = async (which) => {
             let buf = '<tr>'
             for (let j = 1; j < 6; j += 1) {
               const value = schedules[j][i]
-              buf += `<td class="${value && value.isChanged ? 'blue-text' : ''}${value ? ' tooltipped" data-tooltip="' + value.subjectOriginal : ''}">${value ? `${value.subject} (${value.teacher})` : '없음'}</td>`
+              buf += `<td class="${value && value.isChanged ? 'blue-text' : ''}${value ? ' tooltipped" data-tooltip="' + value.subjectOriginal : ''}">${value ? `${value.subject}<br>(${value.teacher})` : '없음'}</td>`
             }
             buf += '</tr>'
             $viewer.append(buf)
