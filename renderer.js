@@ -100,6 +100,9 @@ const updateSchoolData = async (name) => {
 }
 
 $(document).ready(() => {
+  $('.close-window').click(() => {
+    window.close()
+  })
   const autoCompleteData = {}
   school.getAll().filter((value) => value.name.search('초등학교') < 0).forEach((value) => { autoCompleteData[value.name] = null })
   $('input.autocomplete#autocomplete-input-school').autocomplete({

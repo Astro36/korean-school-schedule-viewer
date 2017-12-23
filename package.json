@@ -1,9 +1,11 @@
 {
   "name": "korean-school-schedule-viewer",
+  "productName": "시간표 뷰어",
   "version": "0.1.0",
   "description": "Korean School Schedule Viewer Application",
   "main": "main.js",
   "scripts": {
+    "build": "electron-packager .",
     "lint": "standard",
     "lint-fix": "standard --fix",
     "start": "electron .",
@@ -30,13 +32,14 @@
   "homepage": "https://github.com/Astro36/KoreanSchool-ScheduleViewer#readme",
   "dependencies": {
     "jquery": "^3.2.1",
-    "korean-school": "^0.7.0",
+    "korean-school": "^0.7.1",
     "materialize-css": "^0.100.2"
   },
   "devDependencies": {
     "asar": "^0.14.0",
     "electron": "^1.8.1",
     "electron-packager": "^10.1.0",
+    "electron-winstaller": "^2.6.3",
     "standard": "^10.0.3"
   }
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css">    
-    <title>Hello World!</title>
+    <title>시간표 뷰어</title>
     <style>
       .dropdown-content li>a,
       .dropdown-content li>span {
@@ -34,6 +34,9 @@
       .tabs .indicator {
         background-color: #2196f3;
       }
+      ::-webkit-scrollbar {
+        display: none;
+      }
     </style>
   </head>
   <body class="grey lighten-5">
@@ -42,6 +45,9 @@
         <nav>
           <div class="nav-wrapper blue">
             <a class="brand-logo" href="#">시간표 뷰어</a>
+            <ul class="right">
+              <li><a class="close-window" href="#"><i class="material-icons">close</i></a></li>
+            </ul>
           </div>
         </nav>
       </div>
