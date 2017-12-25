@@ -41,5 +41,8 @@
     "electron-packager": "^10.1.0",
     "electron-winstaller": "^2.6.3",
     "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": ["$", "Materialize"]
   }
 }
