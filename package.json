@@ -5,11 +5,12 @@
   "description": "Korean School Schedule Viewer Application",
   "main": "main.js",
   "scripts": {
-    "build": "electron-packager .",
+    "dev": "electron . --debug",
+    "dist": "electron-builder",
     "lint": "standard",
-    "lint-fix": "standard --fix",
-    "start": "electron .",
-    "start-dev": "electron . --debug"
+    "lint:fix": "standard --fix",
+    "pack": "electron-builder --dir",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -31,18 +32,19 @@
   },
   "homepage": "https://github.com/Astro36/KoreanSchool-ScheduleViewer#readme",
   "dependencies": {
-    "jquery": "^3.2.1",
-    "korean-school": "^0.7.1",
+    "jquery": "^3.3.1",
+    "korean-school": "^0.8.0",
     "materialize-css": "^0.100.2"
   },
   "devDependencies": {
-    "asar": "^0.14.0",
-    "electron": "^1.8.1",
-    "electron-packager": "^10.1.0",
-    "electron-winstaller": "^2.6.3",
-    "standard": "^10.0.3"
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.1",
+    "standard": "^11.0.1"
   },
   "standard": {
-    "globals": ["$", "Materialize"]
+    "globals": [
+      "$",
+      "Materialize"
+    ]
   }
 }
