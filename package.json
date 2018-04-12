@@ -1,6 +1,5 @@
 {
   "name": "korean-school-schedule-viewer",
-  "productName": "시간표 뷰어",
   "version": "0.1.0",
   "description": "Korean School Schedule Viewer Application",
   "main": "main.js",
@@ -33,13 +32,23 @@
   "homepage": "https://github.com/Astro36/KoreanSchool-ScheduleViewer#readme",
   "dependencies": {
     "jquery": "^3.3.1",
-    "korean-school": "^0.8.0",
+    "korean-school": "^0.8.2",
     "materialize-css": "^0.100.2"
   },
   "devDependencies": {
     "electron": "^1.8.4",
     "electron-builder": "^20.8.1",
     "standard": "^11.0.1"
+  },
+  "build": {
+    "appId": "me.astro36.koreanschool.scheduleviewer",
+    "productName": "시간표 뷰어",
+    "copyright": "Copyright © 2018 Astro36",
+    "win": {
+      "target": "portable",
+      "icon": "./assets/img_korean_school_schedule_viewer.png",
+      "publisherName": "Astro36"
+    }
   },
   "standard": {
     "globals": [
